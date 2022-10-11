@@ -1,7 +1,6 @@
-FROM tomcat
-RUN /usr/local/tomcat/bin/./startup.sh
-MAINTAINER aakash_1993
-COPY index.html /usr/local/tomcat/webapps/
+FROM tomcat:9.0.68-jre8-temurin-jammy
+MAINTAINER aakash_90
+COPY gameoflife.war /usr/local/tomcat/webapps/
 EXPOSE 8080
 WORKDIR /usr/local/tomcat/webapps
-ENTRYPOINT ["catalina.sh", "jpda","run"]
+ENTRYPOINT ["catalina.sh","run"]
